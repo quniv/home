@@ -62,18 +62,7 @@
     overflow: hidden;
   }
 
-  .motivation-header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
 
-  .motivation-header h2 {
-    color: #e0e8ff;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 6px;
-    margin-bottom: 0.5rem;
-  }
 
   .motivation-quote-display {
     background: rgba(0, 245, 255, 0.03);
@@ -210,18 +199,11 @@
       grid-template-columns: 1fr;
     }
 
-    .motivation-header h2 {
-      font-size: 1.5rem;
-      letter-spacing: 3px;
-    }
+
   }
 </style>
 
 <div class="motivation-section">
-  <div class="motivation-header">
-    <h2>✨ Once Upon a Time ✨</h2>
-  </div>
-
   <div class="motivation-quote-display">
     <span class="quote-text">{displayedText}</span>
     <span class="cursor">|</span>
