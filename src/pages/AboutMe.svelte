@@ -6,6 +6,7 @@
   import GameOfLife from '../components/GameOfLife.svelte';
   import MotivationSection from '../components/MotivationSection.svelte';
   import HangingScroll from '../components/HangingScroll.svelte';
+  import TechStack from '../components/TechStack.svelte';
 
   let isGeneratingCV = false;
   let cvError = '';
@@ -308,6 +309,7 @@
     </div>
   </div>
 
+  <TechStack />
   <GameOfLife />
   <MotivationSection />
   <HangingScroll />
