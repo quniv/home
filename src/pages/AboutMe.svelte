@@ -5,8 +5,6 @@
   import GameOfLife from '../components/GameOfLife.svelte';
   import MotivationSection from '../components/MotivationSection.svelte';
   import HangingScroll from '../components/HangingScroll.svelte';
-  import CreedPoster from '../components/CreedPoster.svelte';
-  import QuotesTerminal from '../components/QuotesTerminal.svelte';
 
   let isGeneratingCV = false;
 
@@ -300,8 +298,6 @@
   <GameOfLife />
   <MotivationSection />
   <HangingScroll />
-  <CreedPoster />
-  <QuotesTerminal />
 </main>
 
 <footer>
