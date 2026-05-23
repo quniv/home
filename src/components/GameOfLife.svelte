@@ -13,21 +13,6 @@
     overflow: hidden;
   }
 
-  .recipe-header h2 {
-    color: #e0e8ff;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-  }
-
-  .recipe-subtitle {
-    color: #00f5ff;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    font-weight: 400;
-  }
 
   .level-system {
     position: relative;
@@ -247,10 +232,7 @@
 </style>
 
 <div class="recipe-section">
-  <div class="recipe-header">
-    <h2>🎮 Game of Life</h2>
-    <p class="recipe-subtitle">Play it right — level up every cycle</p>
-  </div>
+
   <div class="recipe-content">
     <div class="level-system">
       <div class="level-indicator">
