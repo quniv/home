@@ -54,7 +54,7 @@
 
   <!-- AWS -->
   <div class="icon-wrap">
-    <img src="https://cdn.simpleicons.org/amazonaws/00f5ff" alt="" />
+    <img src="https://cdn.simpleicons.org/amazonwebservices/00f5ff" alt="" />
   </div>
 
   <!-- IoT: connected triangle nodes -->
