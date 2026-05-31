@@ -170,6 +170,9 @@
     <button type="button" class="gif-card" on:click={() => openLightbox('images/ninja.png', 'Ninja')}>
       <img src="images/ninja.png" alt="Ninja" />
     </button>
+    <button type="button" class="gif-card" on:click={() => openLightbox('images/ironman.png', 'Iron Man')}>
+      <img src="images/ironman.png" alt="Iron Man" />
+    </button>
   </div>
 </div>
 
