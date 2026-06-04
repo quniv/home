@@ -1,10 +1,14 @@
 <script>
-  export let activeTab = 'news';
+  export let activeTab = 'home';
 
   let mobileOpen = false;
 
   const tabs = [
-    { id: 'news', label: 'News', icon: '📰' },
+    { id: 'home',     label: 'Home',       icon: '🏠' },
+    { id: 'work',     label: 'Work',       icon: '⚒️' },
+    { id: 'services', label: 'Services',   icon: '📦' },
+    { id: 'team',     label: 'Team',       icon: '👥' },
+    { id: 'blog',     label: 'Blog & Lab', icon: '📓' },
   ];
 
   function selectTab(id) {
@@ -139,36 +143,6 @@
     gap: 0.75rem;
   }
 
-  .footer-icon-btn {
-    background: none;
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    border-radius: 4px;
-    color: #9d8ec4;
-    font-size: 1rem;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0;
-    flex-shrink: 0;
-  }
-
-  .footer-icon-btn:hover {
-    color: #c0c8e8;
-    border-color: rgba(167, 139, 250, 0.4);
-    background: rgba(167, 139, 250, 0.06);
-  }
-
-  .footer-icon-btn.active {
-    color: #a78bfa;
-    border-color: #a78bfa;
-    background: rgba(167, 139, 250, 0.08);
-    box-shadow: 0 0 8px rgba(167, 139, 250, 0.25);
-  }
-
   /* ── Mobile overlay backdrop ── */
   .backdrop {
     display: none;
@@ -210,7 +184,7 @@
 
 <aside class="sidebar" class:open={mobileOpen}>
   <div class="sidebar-logo">
-    <button class="pickle-icon" on:click={() => selectTab('news')} title="Home">🥒</button>
+    <button class="pickle-icon" on:click={() => selectTab('home')} title="Home">🥒</button>
   </div>
 
   <nav>
@@ -227,12 +201,6 @@
   </nav>
 
   <div class="sidebar-footer">
-    <button
-      class="footer-icon-btn"
-      class:active={activeTab === 'aboutme'}
-      on:click={() => selectTab('aboutme')}
-      title="About Me"
-    >👤</button>
-    <span>v0.1.0</span>
+    <span>v0.2.0</span>
   </div>
 </aside>
