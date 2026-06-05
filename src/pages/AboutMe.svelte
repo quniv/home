@@ -60,128 +60,118 @@
 <style>
   /* ── Header ── */
   header {
-    background: linear-gradient(180deg, rgba(5, 3, 20, 0.98) 0%, rgba(5, 5, 25, 0.95) 100%);
+    background: var(--surface);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(167, 139, 250, 0.2);
-    padding: 4rem 2rem;
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3xl) var(--space-xl);
     text-align: center;
     position: relative;
     overflow: hidden;
   }
 
+  /* Single-color subtle accent line — no rainbow shimmer */
   header::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #a78bfa, #fbbf24, #f472b6, #a78bfa, transparent);
-    background-size: 200% 100%;
-    animation: shimmer 4s linear infinite;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
   }
 
   .main-quote {
-    color: #e2d9f3;
-    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.4rem;
     font-style: italic;
     font-weight: 300;
     text-align: center;
-    max-width: 700px;
+    max-width: 640px;
     margin: 0 auto;
-    line-height: 1.8;
-    letter-spacing: 0.5px;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
   }
 
   /* ── Main ── */
   main {
-    padding: 2rem;
-    max-width: 1200px;
+    padding: var(--space-xl) var(--space-xl) var(--space-2xl);
+    max-width: 1100px;
     margin: 0 auto;
   }
 
   /* ── Profile Section ── */
   .profile-section {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
     align-items: start;
   }
 
   .profile-card {
-    background: rgba(5, 3, 20, 0.85);
+    background: var(--surface-raised);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(167, 139, 250, 0.25);
-    padding: 2.5rem 2rem;
+    border: 1px solid var(--border);
+    padding: 2.5rem 1.75rem;
     text-align: center;
-    border-radius: 4px;
-    box-shadow:
-      0 0 20px rgba(167, 139, 250, 0.08),
-      inset 0 0 20px rgba(167, 139, 250, 0.02);
-    transition: all 0.4s ease;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
   .profile-card:hover {
-    box-shadow:
-      0 0 30px rgba(167, 139, 250, 0.2),
-      0 0 60px rgba(167, 139, 250, 0.06),
-      inset 0 0 20px rgba(167, 139, 250, 0.04);
-    transform: translateY(-4px);
-    border-color: rgba(167, 139, 250, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45);
+    border-color: var(--border-active);
   }
 
   img.profile {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    border: 2px solid rgba(167, 139, 250, 0.4);
+    border: 2px solid var(--border-active);
     margin-bottom: 1.2rem;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 0 0 4px rgba(157, 132, 245, 0.08);
     object-fit: cover;
   }
 
   img.profile:hover {
-    transform: scale(1.08);
-    border-color: #a78bfa;
-    box-shadow: 0 0 30px rgba(167, 139, 250, 0.4), 0 0 60px rgba(167, 139, 250, 0.1);
+    transform: scale(1.06);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 6px rgba(157, 132, 245, 0.12);
   }
 
   .name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #f0ecff;
-    margin: 1rem 0 0.5rem;
-    letter-spacing: 1px;
+    color: var(--text-primary);
+    margin: 0.75rem 0 0.4rem;
+    letter-spacing: 0.5px;
   }
 
   .role {
-    color: #a78bfa;
-    font-size: 0.9rem;
+    color: var(--accent);
+    font-size: 0.82rem;
     font-weight: 500;
     letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
+    text-transform: uppercase;
+    font-family: var(--font-mono);
   }
 
   /* ── Bio Section ── */
   .bio-section {
-    background: rgba(5, 3, 20, 0.85);
+    background: var(--surface-raised);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(167, 139, 250, 0.2);
+    border: 1px solid var(--border);
     padding: 2.5rem;
-    line-height: 1.8;
-    border-radius: 4px;
-    box-shadow:
-      0 0 20px rgba(167, 139, 250, 0.06),
-      inset 0 0 20px rgba(167, 139, 250, 0.02);
+    line-height: 1.85;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     position: relative;
   }
 
@@ -189,32 +179,38 @@
     content: 'ABOUT';
     position: absolute;
     top: -10px;
-    left: 24px;
-    background: #050510;
-    padding: 2px 12px;
-    color: #a78bfa;
-    font-size: 0.7rem;
+    left: 22px;
+    background: var(--bg);
+    padding: 1px 10px;
+    color: var(--accent);
+    font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 3px;
     border-radius: 2px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
   }
 
   .bio-section p {
-    margin-bottom: 1rem;
-    color: #9d8ec4;
+    margin-bottom: 0.9rem;
+    color: var(--text-secondary);
     font-weight: 400;
+    font-size: 0.97rem;
+  }
+
+  .bio-section p:last-child {
+    margin-bottom: 0;
   }
 
   /* ── Footer ── */
   footer {
-    background: rgba(5, 3, 20, 0.95);
+    background: var(--surface);
     backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(167, 139, 250, 0.15);
-    color: #6b5a9e;
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
     text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
+    padding: var(--space-xl);
+    margin-top: var(--space-2xl);
     position: relative;
   }
 
@@ -222,68 +218,76 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #a78bfa, #fbbf24, #f472b6, #a78bfa, transparent);
-    background-size: 200% 100%;
-    animation: shimmer 4s linear infinite;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
   }
 
   footer p {
     font-weight: 400;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    font-size: 0.88rem;
+    margin: 0;
   }
 
   .cv-download-btn {
-    display: inline-block;
-    margin-bottom: 1.2rem;
-    padding: 0.7rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: var(--space-md);
+    padding: 0.65rem 1.8rem;
     background: transparent;
-    color: #a78bfa;
+    color: var(--accent);
     text-decoration: none;
-    border: none;
-    border-radius: 0;
-    font-size: 0.8rem;
+    border: 1px solid var(--accent-dim);
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
     font-weight: 500;
-    letter-spacing: 2px;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 0 12px rgba(167, 139, 250, 0.2), inset 0 0 0 1px rgba(167, 139, 250, 0.4);
-    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1.5px;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    font-family: var(--font-mono);
     text-transform: uppercase;
     cursor: pointer;
   }
 
   .cv-download-btn:disabled {
-    opacity: 0.5;
+    opacity: 0.45;
     cursor: not-allowed;
     transform: none;
   }
 
-  .cv-download-btn:hover {
+  .cv-download-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(167, 139, 250, 0.4), inset 0 0 0 1px #a78bfa;
-    background: rgba(167, 139, 250, 0.08);
+    background: var(--accent-faint-md);
+    border-color: var(--accent);
+  }
+
+  .cv-download-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 
   .cv-error {
-    color: #f472b6;
+    color: var(--pink);
     font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 8px rgba(255, 0, 110, 0.4);
   }
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
     .profile-section {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: var(--space-lg);
     }
 
     main {
-      padding: 1rem;
+      padding: var(--space-md) var(--space-md) var(--space-xl);
+    }
+
+    header {
+      padding: var(--space-xl) var(--space-md);
     }
   }
 </style>

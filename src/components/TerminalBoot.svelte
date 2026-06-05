@@ -23,22 +23,20 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(0, 5, 20, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(167, 139, 250, 0.4);
-    padding: 16px 20px;
-    font-size: 12px;
-    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
-    max-width: 300px;
+    background: var(--surface);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    max-width: 290px;
     white-space: pre-line;
-    border-radius: 2px;
-    box-shadow:
-      0 0 20px rgba(167, 139, 250, 0.15),
-      0 0 40px rgba(167, 139, 250, 0.04),
-      inset 0 0 20px rgba(167, 139, 250, 0.03);
-    color: #a78bfa;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: var(--text-muted);
     z-index: 100;
+    line-height: 1.7;
   }
 </style>
 

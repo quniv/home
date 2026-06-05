@@ -1,18 +1,18 @@
 <style>
-  /* ── Game of Life Section ── */
+  /* ── Growth Cycle Section ── */
   .recipe-section {
-    background: rgba(0, 5, 20, 0.85);
+    background: var(--surface-raised);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    padding: 3rem 2rem;
-    margin: 3rem 0;
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    padding: var(--space-2xl) var(--space-xl);
+    margin: var(--space-2xl) 0;
     text-align: center;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.06);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
   }
-
 
   .level-system {
     position: relative;
@@ -23,25 +23,25 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
   .level-bar {
     width: 200px;
-    height: 6px;
-    background: rgba(167, 139, 250, 0.08);
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    border-radius: 0;
+    height: 5px;
+    background: var(--accent-faint);
+    border: 1px solid var(--border);
+    border-radius: 3px;
     overflow: hidden;
   }
 
   .level-progress {
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, #a78bfa, #fbbf24, #f472b6, #a78bfa);
+    background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
     background-size: 200% 100%;
-    animation: progressShift 2s linear infinite;
-    border-radius: 0;
+    animation: progressShift 3s linear infinite;
+    border-radius: 3px;
   }
 
   @keyframes progressShift {
@@ -50,26 +50,25 @@
   }
 
   .level-text {
-    color: #a78bfa;
-    font-size: 1rem;
+    color: var(--accent);
+    font-size: 0.95rem;
     font-weight: 600;
-    letter-spacing: 3px;
-    font-family: 'JetBrains Mono', monospace;
-    text-shadow: 0 0 10px rgba(167, 139, 250, 0.6);
+    letter-spacing: 2.5px;
+    font-family: var(--font-mono);
   }
 
   .cycle-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
   }
 
   .cycle-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.85rem;
     flex-wrap: wrap;
   }
 
@@ -77,104 +76,103 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-    padding: 1.2rem 1.2rem;
-    background: rgba(0, 5, 25, 0.9);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    min-width: 130px;
-    transition: all 0.3s ease;
+    gap: 0.35rem;
+    padding: 1.1rem 1.1rem;
+    background: rgba(8, 6, 24, 0.9);
+    border: 1px solid var(--border);
+    min-width: 124px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     position: relative;
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(167, 139, 250, 0.04);
+    border-radius: var(--radius-sm);
   }
 
   .cycle-step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.2), 0 0 40px rgba(167, 139, 250, 0.06);
-    border-color: #a78bfa;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+    border-color: var(--border-active);
   }
 
   .cycle-step .step-number {
     position: absolute;
     top: -10px;
     left: -10px;
-    width: 24px;
-    height: 24px;
-    background: #a78bfa;
-    color: #000;
-    font-size: 0.75rem;
+    width: 22px;
+    height: 22px;
+    background: var(--accent);
+    color: #0a0820;
+    font-size: 0.72rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0;
-    font-family: 'JetBrains Mono', monospace;
+    border-radius: 3px;
+    font-family: var(--font-mono);
   }
 
   .cycle-step .step-icon {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .cycle-step .step-text {
-    color: #e2d9f3;
+    color: var(--text-primary);
     font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.83rem;
+    letter-spacing: 0.5px;
   }
 
   .cycle-step .step-desc {
-    color: #6b5a9e;
+    color: var(--text-muted);
     font-size: 0.7rem;
     text-align: center;
+    line-height: 1.4;
   }
 
   .cycle-step.damage {
-    border-color: rgba(244, 114, 182, 0.4);
-    background: rgba(20, 0, 10, 0.9);
+    border-color: rgba(201, 93, 154, 0.35);
+    background: rgba(18, 4, 12, 0.9);
   }
 
   .cycle-step.damage .step-number {
-    background: #f472b6;
+    background: var(--pink);
   }
 
+  /* Muted green — no more #00ff78 neon */
   .cycle-step.growth {
-    border-color: rgba(0, 255, 120, 0.3);
-    background: rgba(0, 15, 5, 0.9);
+    border-color: rgba(76, 175, 133, 0.35);
+    background: rgba(4, 16, 10, 0.9);
   }
 
   .cycle-step.growth .step-number {
-    background: #00ff78;
-    color: #000;
+    background: var(--green-muted);
+    color: #030e08;
   }
 
   .cycle-step.next-level {
-    border-color: rgba(167, 139, 250, 0.4);
-    background: rgba(0, 10, 25, 0.9);
-    animation: neonPulse 3s ease-in-out infinite alternate;
+    border-color: rgba(157, 132, 245, 0.4);
+    background: rgba(8, 7, 28, 0.9);
+    animation: subtlePulse 3.5s ease-in-out infinite alternate;
   }
 
   .cycle-step.next-level .step-number {
-    background: #e0e8ff;
-    color: #000;
+    background: var(--text-primary);
+    color: #0a0820;
   }
 
-  @keyframes neonPulse {
-    0% { box-shadow: 0 0 10px rgba(167, 139, 250, 0.1); }
-    100% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.35), 0 0 50px rgba(167, 139, 250, 0.1); }
+  @keyframes subtlePulse {
+    0% { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+    100% { box-shadow: 0 4px 22px rgba(157, 132, 245, 0.2); }
   }
 
   .cycle-arrow {
-    color: #a78bfa;
-    font-size: 1.3rem;
-    font-weight: 300;
-    opacity: 0.6;
-    animation: arrowPulse 2s ease-in-out infinite;
-    text-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+    color: var(--accent-dim);
+    font-size: 1.2rem;
+    opacity: 0.7;
+    animation: arrowPulse 2.5s ease-in-out infinite;
   }
 
   @keyframes arrowPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.85; }
   }
 
   .loop-indicator {
@@ -182,17 +180,17 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: rgba(167, 139, 250, 0.04);
-    border: 1px solid rgba(167, 139, 250, 0.15);
-    border-radius: 2px;
+    padding: 0.9rem 1.4rem;
+    background: var(--accent-faint);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
   }
 
   .loop-arrow {
-    font-size: 1.5rem;
-    color: #a78bfa;
-    animation: loopSpin 4s linear infinite;
-    text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+    font-size: 1.4rem;
+    color: var(--accent);
+    animation: loopSpin 5s linear infinite;
+    flex-shrink: 0;
   }
 
   @keyframes loopSpin {
@@ -201,8 +199,8 @@
   }
 
   .loop-text {
-    color: #9d8ec4;
-    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
     font-style: italic;
   }
 
@@ -217,11 +215,11 @@
     }
 
     .cycle-step {
-      min-width: 100%;
+      min-width: 90%;
     }
 
     .recipe-section {
-      padding: 2rem 1rem;
+      padding: var(--space-xl) var(--space-md);
     }
 
     .loop-indicator {
