@@ -2,10 +2,13 @@
 <script>
   import Sidebar from './components/Sidebar.svelte';
   import Starfield from './components/Starfield.svelte';
-  import News from './pages/News.svelte';
-  import AboutMe from './pages/AboutMe.svelte';
+  import Home from './pages/Home.svelte';
+  import Work from './pages/Work.svelte';
+  import Services from './pages/Services.svelte';
+  import Team from './pages/Team.svelte';
+  import Blog from './pages/Blog.svelte';
 
-  let activeTab = 'news';
+  let activeTab = 'home';
 </script>
 
 <style>
@@ -126,10 +129,16 @@
   <Sidebar bind:activeTab />
 
   <div class="content-area">
-    {#if activeTab === 'news'}
-      <News />
-    {:else if activeTab === 'aboutme'}
-      <AboutMe />
+    {#if activeTab === 'home'}
+      <Home onNavigate={(id) => { activeTab = id; }} />
+    {:else if activeTab === 'work'}
+      <Work />
+    {:else if activeTab === 'services'}
+      <Services />
+    {:else if activeTab === 'team'}
+      <Team />
+    {:else if activeTab === 'blog'}
+      <Blog />
     {/if}
   </div>
 </div>

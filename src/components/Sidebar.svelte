@@ -1,10 +1,14 @@
 <script>
-  export let activeTab = 'news';
+  export let activeTab = 'home';
 
   let mobileOpen = false;
 
   const tabs = [
-    { id: 'news', label: 'News', icon: '📰' },
+    { id: 'home',     label: 'Home',       icon: '🏠' },
+    { id: 'work',     label: 'Work',       icon: '⚒️' },
+    { id: 'services', label: 'Services',   icon: '📦' },
+    { id: 'team',     label: 'Team',       icon: '👥' },
+    { id: 'blog',     label: 'Blog & Lab', icon: '📓' },
   ];
 
   function selectTab(id) {
@@ -157,40 +161,6 @@
     gap: 0.75rem;
   }
 
-  .footer-icon-btn {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    color: var(--text-muted);
-    font-size: 1rem;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-    padding: 0;
-    flex-shrink: 0;
-  }
-
-  .footer-icon-btn:hover {
-    color: var(--text-secondary);
-    border-color: var(--accent-dim);
-    background: var(--accent-faint);
-  }
-
-  .footer-icon-btn.active {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-faint-md);
-  }
-
-  .footer-icon-btn:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-
   /* ── Mobile overlay backdrop ── */
   .backdrop {
     display: none;
@@ -232,7 +202,7 @@
 
 <aside class="sidebar" class:open={mobileOpen}>
   <div class="sidebar-logo">
-    <button class="pickle-icon" on:click={() => selectTab('news')} title="Home">🥒</button>
+    <button class="pickle-icon" on:click={() => selectTab('home')} title="Home">🥒</button>
   </div>
 
   <nav>
@@ -249,12 +219,6 @@
   </nav>
 
   <div class="sidebar-footer">
-    <button
-      class="footer-icon-btn"
-      class:active={activeTab === 'aboutme'}
-      on:click={() => selectTab('aboutme')}
-      title="About Me"
-    >👤</button>
-    <span>v0.1.0</span>
+    <span>v0.2.0</span>
   </div>
 </aside>

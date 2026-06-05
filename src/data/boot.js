@@ -1,7 +1,7 @@
 export const bootSequence = [
-  '[hIE] Initializing...',
-  '[hIE] Behavioral model loaded...',
-  '[hIE] Owner registration: confirmed',
+  '[ChillPickle] Initializing...',
+  '[ChillPickle] Systems online.',
+  '[ChillPickle] Ready to build.',
   'ACCESS GRANTED — Welcome, visitor.',
   '> _ <',
 ];

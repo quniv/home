@@ -12,14 +12,14 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
-    "eslint": "^10.4.0",
+    "eslint": "^10.4.1",
     "eslint-plugin-security": "^4.0.0",
-    "eslint-plugin-svelte": "^3.18.0",
+    "eslint-plugin-svelte": "^3.19.0",
     "globals": "^17.6.0",
     "sharp": "^0.34.5",
-    "svelte": "^5.55.10",
+    "svelte": "^5.56.0",
     "tenoxui": "^1.0.0",
-    "vite": "^8.0.14"
+    "vite": "^8.0.16"
   },
   "dependencies": {
     "html2pdf.js": "^0.14.0"
