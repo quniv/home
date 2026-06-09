@@ -29,20 +29,25 @@
     top: 14px;
     left: 14px;
     z-index: 300;
-    background: rgba(5, 3, 20, 0.95);
-    border: 1px solid rgba(167, 139, 250, 0.4);
-    color: #a78bfa;
+    background: var(--surface);
+    border: 1px solid var(--border-active);
+    color: var(--accent);
     font-size: 1.2rem;
     line-height: 1;
     padding: 0.4rem 0.6rem;
     cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.2s;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s, border-color 0.2s;
   }
 
   .hamburger:hover {
-    background: rgba(167, 139, 250, 0.1);
-    box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
+    background: var(--accent-faint-md);
+    border-color: var(--accent);
+  }
+
+  .hamburger:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   /* ── Sidebar ── */
@@ -52,19 +57,19 @@
     left: 0;
     width: 220px;
     height: 100vh;
-    background: rgba(5, 3, 20, 0.98);
-    border-right: 1px solid rgba(167, 139, 250, 0.25);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     z-index: 200;
-    box-shadow: 4px 0 24px rgba(167, 139, 250, 0.06);
+    box-shadow: 4px 0 32px rgba(0, 0, 0, 0.4);
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* ── Logo / Title ── */
   .sidebar-logo {
     padding: 1.8rem 1.5rem 1.4rem;
-    border-bottom: 1px solid rgba(167, 139, 250, 0.12);
+    border-bottom: 1px solid var(--border-subtle);
   }
 
   .pickle-icon {
@@ -78,17 +83,23 @@
     border: none;
     padding: 0;
     width: 100%;
+    border-radius: var(--radius-sm);
+  }
+
+  .pickle-icon:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
   }
 
   @keyframes pickleFloat {
-    0%, 100% { transform: rotate(-8deg) translateY(0); }
-    50%       { transform: rotate(8deg) translateY(-4px); }
+    0%, 100% { transform: rotate(-6deg) translateY(0); }
+    50%       { transform: rotate(6deg) translateY(-3px); }
   }
 
   /* ── Nav ── */
   nav {
     flex: 1;
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     overflow-y: auto;
   }
 
@@ -98,29 +109,36 @@
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
-    color: #9d8ec4;
+    color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     position: relative;
-    transition: color 0.2s ease, background 0.2s ease;
+    transition: color 0.18s ease, background 0.18s ease;
     border: none;
     background: none;
     width: 100%;
     text-align: left;
     border-left: 3px solid transparent;
+    border-radius: 0;
   }
 
   .nav-item:hover {
-    color: #c0c8e8;
-    background: rgba(167, 139, 250, 0.05);
+    color: var(--text-secondary);
+    background: var(--accent-faint);
   }
 
   .nav-item.active {
-    color: #a78bfa;
-    background: rgba(167, 139, 250, 0.07);
-    border-left-color: #a78bfa;
-    text-shadow: 0 0 8px rgba(167, 139, 250, 0.4);
+    color: var(--accent);
+    background: var(--accent-faint-md);
+    border-left-color: var(--accent);
+    font-weight: 500;
+  }
+
+  .nav-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    background: var(--accent-faint);
   }
 
   .nav-icon {
@@ -133,10 +151,10 @@
   /* ── Footer strip ── */
   .sidebar-footer {
     padding: 1rem 1.5rem;
-    border-top: 1px solid rgba(167, 139, 250, 0.1);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    color: #4a4070;
+    border-top: 1px solid var(--border-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-dim);
     letter-spacing: 1px;
     display: flex;
     align-items: center;
@@ -148,7 +166,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.72);
     z-index: 199;
   }
 

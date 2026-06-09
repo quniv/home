@@ -18,60 +18,59 @@
 
 <style>
   .motivation-section {
-    background: rgba(0, 5, 20, 0.85);
+    background: var(--surface-raised);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    margin: 3rem 0;
-    padding: 3rem 2rem;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.06);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl) var(--space-xl);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
   }
 
-
-
   .motivation-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.25rem;
+    margin: 0;
   }
 
   .gif-card {
     position: relative;
     aspect-ratio: 1;
     overflow: hidden;
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    border-radius: 2px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
     background: #000;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 10px rgba(167, 139, 250, 0.05);
-    /* button reset */
-    background: none;
-    border: 1px solid rgba(167, 139, 250, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     padding: 0;
     cursor: zoom-in;
-    /* override none from button reset */
-    background: #000;
   }
 
   .gif-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.4s ease;
-    filter: saturate(0.85) brightness(0.85);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    filter: saturate(0.8) brightness(0.8);
+    display: block;
   }
 
   .gif-card:hover {
-    transform: scale(1.03) translateY(-4px);
-    border-color: #a78bfa;
-    box-shadow: 0 0 25px rgba(167, 139, 250, 0.3), 0 0 50px rgba(167, 139, 250, 0.08);
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   }
 
   .gif-card:hover img {
-    filter: saturate(1.3) brightness(1.1);
+    filter: saturate(1.1) brightness(1.0);
+  }
+
+  .gif-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   /* ── Lightbox ── */
@@ -79,11 +78,11 @@
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(2, 2, 12, 0.94);
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: lb-in 0.2s ease;
+    animation: lb-in 0.18s ease;
   }
 
   @keyframes lb-in {
@@ -95,14 +94,14 @@
     max-width: 90vw;
     max-height: 90vh;
     object-fit: contain;
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    box-shadow: 0 0 60px rgba(167, 139, 250, 0.15);
-    border-radius: 2px;
-    animation: lb-scale 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.7);
+    border-radius: var(--radius-sm);
+    animation: lb-scale 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   @keyframes lb-scale {
-    from { transform: scale(0.85); opacity: 0; }
+    from { transform: scale(0.87); opacity: 0; }
     to   { transform: scale(1);    opacity: 1; }
   }
 
@@ -110,28 +109,37 @@
     position: fixed;
     top: 1.25rem;
     right: 1.5rem;
-    background: none;
-    border: 1px solid rgba(167, 139, 250, 0.4);
-    color: #a78bfa;
-    font-size: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border-active);
+    color: var(--accent);
+    font-size: 1.1rem;
     line-height: 1;
-    padding: 0.35rem 0.6rem;
+    padding: 0.4rem 0.65rem;
     cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.2s;
+    border-radius: var(--radius-sm);
+    transition: background 0.18s, border-color 0.18s;
   }
 
   .lightbox-close:hover {
-    background: rgba(167, 139, 250, 0.1);
-    box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
+    background: var(--accent-faint-md);
+    border-color: var(--accent);
+  }
+
+  .lightbox-close:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   @media (max-width: 768px) {
     .motivation-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .motivation-grid {
       grid-template-columns: 1fr;
     }
-
-
   }
 </style>
 

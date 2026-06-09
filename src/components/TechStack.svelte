@@ -3,42 +3,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    padding: 2rem 0;
+    gap: 1.25rem;
+    padding: 1.75rem 0 2rem;
     flex-wrap: wrap;
   }
 
   .icon-wrap {
-    width: 64px;
-    height: 64px;
+    width: 62px;
+    height: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(167, 139, 250, 0.15);
-    border-radius: 4px;
-    background: rgba(167, 139, 250, 0.03);
-    color: rgba(167, 139, 250, 0.45);
-    transition: all 0.3s ease;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--accent-faint);
+    color: var(--accent-dim);
+    transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease, transform 0.22s ease;
   }
 
   .icon-wrap:hover {
-    border-color: rgba(167, 139, 250, 0.5);
-    background: rgba(167, 139, 250, 0.07);
-    color: #a78bfa;
-    box-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+    border-color: var(--border-active);
+    background: var(--accent-faint-md);
+    color: var(--accent);
     transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   }
 
   .icon-wrap svg {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
 
   .icon-wrap img {
-    width: 32px;
-    height: 32px;
-    opacity: 0.45;
-    transition: opacity 0.3s ease;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    transition: opacity 0.22s ease;
   }
 
   .icon-wrap:hover img {
@@ -49,7 +49,7 @@
 <div class="tech-strip">
   <!-- Kubernetes -->
   <div class="icon-wrap">
-    <img src="https://cdn.simpleicons.org/kubernetes/a78bfa" alt="" />
+    <img src="https://cdn.simpleicons.org/kubernetes/9d84f5" alt="" />
   </div>
 
   <!-- AWS -->

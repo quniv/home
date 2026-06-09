@@ -11,15 +11,15 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       stars.length = 0;
-      for (let i = 0; i < 260; i++) {
+      for (let i = 0; i < 240; i++) {
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          r: Math.random() * 1.4,
-          base: Math.random() * 0.7 + 0.1,
-          speed: Math.random() * 0.012 + 0.002,
+          r: Math.random() * 1.3,
+          base: Math.random() * 0.55 + 0.08,
+          speed: Math.random() * 0.010 + 0.002,
           phase: Math.random() * Math.PI * 2,
-          hue: Math.random() < 0.15 ? 'warm' : Math.random() < 0.15 ? 'blue' : 'white',
+          hue: Math.random() < 0.12 ? 'warm' : Math.random() < 0.12 ? 'blue' : 'white',
         });
       }
     };
@@ -37,9 +37,9 @@
       for (const s of stars) {
         const alpha = s.base * (0.5 + 0.5 * Math.sin(t * s.speed * 60 + s.phase));
         let color;
-        if (s.hue === 'warm') color = `rgba(251, 191, 36, ${alpha})`;
-        else if (s.hue === 'blue') color = `rgba(147, 197, 253, ${alpha})`;
-        else color = `rgba(255, 255, 255, ${alpha})`;
+        if (s.hue === 'warm') color = `rgba(210, 162, 50, ${alpha})`;
+        else if (s.hue === 'blue') color = `rgba(130, 175, 240, ${alpha})`;
+        else color = `rgba(230, 226, 248, ${alpha})`;
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);

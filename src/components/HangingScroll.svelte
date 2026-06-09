@@ -4,8 +4,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3rem 2rem;
-    margin: 3rem 0;
+    padding: var(--space-2xl) var(--space-xl);
+    margin: var(--space-2xl) 0;
   }
 
   .hanging-scroll {
@@ -13,20 +13,20 @@
     flex-direction: column;
     align-items: center;
     animation: scrollSway 6s ease-in-out infinite;
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.4));
   }
 
   @keyframes scrollSway {
-    0%, 100% { transform: rotate(-1deg); }
-    50% { transform: rotate(1deg); }
+    0%, 100% { transform: rotate(-0.8deg); }
+    50% { transform: rotate(0.8deg); }
   }
 
   .scroll-rod {
     width: 120px;
     height: 10px;
-    background: linear-gradient(180deg, #1a1a3a 0%, #0a0a2a 50%, #050518 100%);
-    border-radius: 0;
-    box-shadow: 0 0 10px rgba(167, 139, 250, 0.2), 0 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, #1c1a3e 0%, #0e0c2a 50%, #080620 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     position: relative;
   }
 
@@ -38,8 +38,8 @@
     transform: translateY(-50%);
     width: 8px;
     height: 16px;
-    background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 50%, #4c1d95 100%);
-    border-radius: 0;
+    background: linear-gradient(180deg, var(--accent) 0%, #6d3fcf 100%);
+    border-radius: 1px;
   }
 
   .scroll-rod.top::before { left: 4px; }
@@ -47,9 +47,9 @@
 
   .scroll-body {
     width: auto;
-    background: linear-gradient(180deg, #080820 0%, #0a0a28 10%, #080820 50%, #0a0a28 90%, #080820 100%);
-    border-left: 2px solid rgba(167, 139, 250, 0.4);
-    border-right: 2px solid rgba(167, 139, 250, 0.4);
+    background: linear-gradient(180deg, #09082a 0%, #0b0a30 50%, #09082a 100%);
+    border-left: 2px solid var(--accent-dim);
+    border-right: 2px solid var(--accent-dim);
     padding: 1rem 1.2rem;
     position: relative;
   }
@@ -77,15 +77,13 @@
     font-family: 'Noto Serif SC', 'SimSun', serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #a78bfa;
-    text-shadow: 0 0 10px rgba(167, 139, 250, 0.6);
-    transition: all 0.3s ease;
+    color: var(--accent);
+    transition: color 0.25s ease;
     line-height: 1.2;
   }
 
   .scroll-text span:hover {
-    color: #f472b6;
-    text-shadow: 0 0 15px rgba(255, 0, 110, 0.8);
+    color: var(--pink);
   }
 
   .scroll-rod.bottom {
@@ -94,8 +92,8 @@
 
   .scroll-tassel {
     width: 4px;
-    height: 40px;
-    background: linear-gradient(180deg, rgba(167, 139, 250, 0.6), rgba(167, 139, 250, 0.2));
+    height: 38px;
+    background: linear-gradient(180deg, var(--accent-dim), transparent);
     position: relative;
     margin-top: -2px;
   }
@@ -103,27 +101,18 @@
   .scroll-tassel::after {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -18px;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 30px;
-    background: linear-gradient(180deg, #f472b6 0%, #c026d3 100%);
+    width: 18px;
+    height: 28px;
+    background: linear-gradient(180deg, var(--pink) 0%, #a01878 100%);
     clip-path: polygon(50% 0%, 100% 20%, 80% 100%, 20% 100%, 0% 20%);
-  }
-
-  .scroll-translation {
-    margin-top: 2rem;
-    color: #6b5a9e;
-    font-size: 1rem;
-    font-style: italic;
-    text-align: center;
-    letter-spacing: 1px;
   }
 
   @media (max-width: 768px) {
     .hanging-scroll {
-      transform: scale(0.8);
+      transform: scale(0.82);
     }
   }
 </style>
