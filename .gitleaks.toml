@@ -1,0 +1,3 @@
+[allowlist]
+  description = "Expired pre-signed S3 URL in historical commit (temporary STS token, expired Aug 2024)"
+  commits = ["e63a924aadccbb587f18da2b185c99826369c602"]
